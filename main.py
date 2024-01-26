@@ -6,7 +6,6 @@ import thread_lib as tl
 import win32api
 import globals
 import threading
-import keyboard
 
 init.Init()
 flag = False
@@ -94,14 +93,14 @@ while True :
 
             jump_x = globals.my["cur_floor"]["rope_xL"]
 
-            if (abs(destination - globals.my["minimap_pos"][0]) >= 40) and sl.compareTime(globals.monster["time"],1.5):
+            if (abs(destination - globals.my["minimap_pos"][0]) >= 45) and sl.compareTime(globals.monster["time"],2):
                 if globals.my["jump"] == False :
                     sl.hardKey(globals.shift)
                     globals.monster["time"] = time.time()
 
                 else :
                     if globals.my["direction"] == globals.my["cur_floor"]["jump_dict"] :
-                        if (abs(jump_x - globals.my["minimap_pos"][0]) >= 40) :
+                        if (abs(jump_x - globals.my["minimap_pos"][0]) >= 45) :
                             sl.hardKey(globals.shift)
                             globals.monster["time"] = time.time()
                     else :

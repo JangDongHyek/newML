@@ -70,7 +70,7 @@ maps = [
         "map_dict" : "left",
         "method" : "reverse",
         "minimapSize" : [12,55,432,218],
-        "range" : [-250,-100,+250,+325],
+        "range" : [-250,-100,+250,+300],
         "monsters" : [(206, 222, 239)],#와보,스텀프
         "floors" : [
             {
@@ -155,10 +155,10 @@ maps = [
                 "move_type": "tel",
                 "jumps_L": [],
                 "jumps_R": [],
-                "rope_xL": None,
-                "rope_yL": None,
-                "rope_xR": None,
-                "rope_yR": None,
+                "rope_xL": 0,
+                "rope_yL": 0,
+                "rope_xR": 0,
+                "rope_yR": 0,
             },
 
             {

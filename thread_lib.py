@@ -2,18 +2,6 @@ import globals
 import support_lib as sl
 import pyMeow as pm
 import time
-import keyboard
-
-def filePosSave(e):
-    if e.event_type == keyboard.KEY_UP :
-        with open("a.txt", "a") as file:
-            file.write("({},{})\n".format(globals.my["minimap_pos"][0],globals.my["minimap_pos"][1]))
-
-def fileEndl(e) :
-    if e.event_type == keyboard.KEY_UP:
-        with open("a.txt", "a") as file:
-            file.write("-----------\n")
-
 
 
 def checkMonster() :

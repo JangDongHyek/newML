@@ -23,9 +23,9 @@ def jumpIF() :
             return globals.my["minimap_pos"][0] > (globals.my["cur_floor"]["rope_xL"] - 15)
     elif globals.my["cur_floor"]["move_type"] == "tel" :
         if globals.my["cur_floor"]["x_dict"] == "left":
-            return globals.my["minimap_pos"][0] <= (globals.my["cur_floor"]["rope_xL"])
+            return globals.my["minimap_pos"][0] <= (globals.my["cur_floor"]["rope_xL"] + 3)
         elif  globals.my["cur_floor"]["x_dict"] == "right":
-            return globals.my["minimap_pos"][0] >= (globals.my["cur_floor"]["rope_xR"])
+            return globals.my["minimap_pos"][0] >= (globals.my["cur_floor"]["rope_xR"] - 3)
 
 def changeFloor() :
     if (globals.my["cur_floor"]["jump_dict"] == globals.my["direction"]) and globals.my["jump"] and jumpIF():  # 윗점프
@@ -41,6 +41,20 @@ def changeFloor() :
                 sl.hardKey(globals.up, False)
                 time.sleep(0.5)
                 if globals.my["minimap_pos"][1] <= globals.my["cur_floor"]["rope_yL"] - 2:
+                    a = time.time()
+                    while True:
+                        time.sleep(0.1)
+                        if (globals.my["minimap_pos"][1] <= (globals.my["next_floor"]["low_y"])):
+                            break
+
+                        if sl.compareTime(a, 4):
+                            sl.hardKey(globals.right, True)
+                            time.sleep(0.5)
+                            sl.hardKey(globals.alt)
+                            time.sleep(0.5)
+                            sl.hardKey(globals.right, False)
+                            break
+
                     if globals.my["cur_floor"]["double_xline"] :
                         if globals.my["cur_floor"]["x_dict"] == "left" :
                             globals.my["cur_floor"]["x_dict"] = "right"
