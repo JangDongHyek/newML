@@ -13,7 +13,8 @@ def checkMonster() :
                 globals.monster["time"] = time.time()
 
     except Exception as e :
-        print("checkMonster")
+        print("E_checkMonster")
+        print(e)
         globals.checkMonsterFlag = True
 
 def game_myPos() :
@@ -28,7 +29,7 @@ def game_myPos() :
                 globals.my["range"][3] = p[1] + globals.map["range"][3]
 
     except Exception as e :
-        print("game_myPos")
+        print("E_game_myPos")
         globals.game_myPosFlag = True
 
 
@@ -39,7 +40,7 @@ def minimap_myPos() :
             if(p) :
                 globals.my["minimap_pos"] = p
     except Exception as e :
-        print("minimap_myPos")
+        print("E_minimap_myPos")
         globals.minimap_myPosFlag = True
 
 def render() :

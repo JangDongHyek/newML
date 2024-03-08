@@ -1,6 +1,6 @@
 import time
 # 기본설정
-gameTitle = "MapleStory Worlds-Mapleland"
+gameTitle = "MapleStory Worlds-Mapleland (엘나스)"
 hwnd = None
 ddl = None
 window_x = 0
@@ -40,16 +40,28 @@ my = {
 
     "skills" : [
         {
-            "name" : "Magic Amor",
-            "key" : home,
-            "cooldown" : 200,
-            "time" : time.time()
+            "name": "Inbin",
+            "key": insert,
+            "cooldown": 200,
+            "time": time.time()
         },
         {
-            "name": "Pets Food",
-            "key" : pageup,
-            "cooldown" : 600,
+            "name" : "bless",
+            "key" : home,
+            "cooldown" : 150,
             "time" : time.time()
+        },
+        # {
+        #     "name": "Gard",
+        #     "key" : pageup,
+        #     "cooldown" : 500,
+        #     "time" : time.time()
+        # },
+        {
+            "name": "Pet",
+            "key": pagedown,
+            "cooldown": 600,
+            "time": time.time()
         }
     ]
 }
@@ -65,6 +77,59 @@ monster = {
 
 
 maps = [
+    {
+        "name": "죽은나무의숲2",
+        "map_dict": "right",
+        "method": "reverse",
+        "minimapSize": [12, 55, 350, 255],
+        "range": [-250, -100, +250, +300],
+        "monsters": [(222, 239, 206)],  # 와보,스텀프
+        "floors": [
+            {
+                "name": "1",
+                "search_start_x": 90,
+                "search_end_x": 290,
+                "start_x": 73,
+                "end_x": 293,
+                "low_y": 133,
+                "high_y": 178,
+                "x_dict": "right",
+                "y_dict": "up",
+                "jump_dict": "right",
+                "double_xline": False,
+                "double_yline": False,
+                "move_type": "jump",
+                "jumps_L": [],
+                "jumps_R": [],
+                "rope_xL": 255,
+                "rope_yL": 170,
+                "rope_xR": 255,
+                "rope_yR": 170,
+            },
+            {
+                "name": "2",
+                "search_start_x": 160,
+                "search_end_x": 270,
+                "start_x": 50,
+                "end_x": 253,
+                "low_y": 110,
+                "high_y": 118,
+                "x_dict": "right",
+                "y_dict": "up",
+                "jump_dict": "right",
+                "double_xline": False,
+                "double_yline": False,
+                "move_type": "jump",
+                "jumps_L": [],
+                "jumps_R": [],
+                "rope_xL": 50,
+                "rope_yL": 170,
+                "rope_xR": 50,
+                "rope_yR": 170,
+            },
+
+        ]
+    },
     {
         "name" : "1호선 4구역",
         "map_dict" : "left",

@@ -108,26 +108,30 @@ def floorJumps(cur_floor) :
                 sl.hardKey(globals.alt)
 
 def checkPos() :
-    # 좌표에따른 방향 설정 및 점프 초기화
-    if globals.my["cur_floor"]["start_x"] +10 >= globals.my["minimap_pos"][0]:
-        globals.my["direction"] = "right"
-    if globals.my["cur_floor"]["end_x"] -10 <= globals.my["minimap_pos"][0]:
-        globals.my["direction"] = "left"
+    try :
+        # 좌표에따른 방향 설정 및 점프 초기화
+        if globals.my["cur_floor"]["start_x"] + 10 >= globals.my["minimap_pos"][0]:
+            globals.my["direction"] = "right"
+        if globals.my["cur_floor"]["end_x"] - 10 <= globals.my["minimap_pos"][0]:
+            globals.my["direction"] = "left"
 
-    if globals.my["cur_floor"]["jump_dict"] != globals.my["direction"]:
-        globals.my["jump"] = True
+        if globals.my["cur_floor"]["jump_dict"] != globals.my["direction"]:
+            globals.my["jump"] = True
 
-    # 방향에 따른 이동및 사거리 체크
-    if globals.my["direction"] == "left":
-        sl.hardKey(globals.right, False)
-        sl.hardKey(globals.z, False)
-        sl.hardKey(globals.left, True)
-        sl.hardKey(globals.z, True)
-    elif globals.my["direction"] == "right":
-        sl.hardKey(globals.left, False)
-        sl.hardKey(globals.z, False)
-        sl.hardKey(globals.right, True)
-        sl.hardKey(globals.z, True)
+        # 방향에 따른 이동및 사거리 체크
+        if globals.my["direction"] == "left":
+            sl.hardKey(globals.right, False)
+            sl.hardKey(globals.z, False)
+            sl.hardKey(globals.left, True)
+            sl.hardKey(globals.z, True)
+        elif globals.my["direction"] == "right":
+            sl.hardKey(globals.left, False)
+            sl.hardKey(globals.z, False)
+            sl.hardKey(globals.right, True)
+            sl.hardKey(globals.z, True)
+    except Exception as e :
+        print("E_checkPos")
+        print(globals.my["cur_floor"])
 
 def getFloor() :
     for i, m in enumerate(globals.map["floors"]):

@@ -13,7 +13,7 @@ flag = False
 # globals.my["game_pixel"] = [(34, 102, 68)] # 혁지션
 globals.my["game_pixel"] = [(255, 115, 238)] # 장달프
 # globals.map = gl.findMap("와일드보어의 땅")
-globals.map = gl.findMap("1호선 4구역")
+globals.map = gl.findMap("죽은나무의숲2")
 
 
 
